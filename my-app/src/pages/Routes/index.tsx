@@ -5,7 +5,7 @@ import Photos from "../Photos";
 
 const Routes = () => {
 
-  const [isFirstLoading, setIsFirstLoading] = useState(false);
+  const [isFirstLoading, setIsFirstLoading] = useState(true);
 
   useEffect(() => {
     if (isFirstLoading) {
