@@ -6,6 +6,7 @@ import { Descriptions, Select, Table } from "antd";
 import { useState } from "react";
 import PhotoModal from "../../components/Modal";
 import {IrecordType,recordType,routeParamsType} from './types'
+import AppLayout from "../../components/Layout";
 
 const Photos = () => {
   const routeParams:routeParamsType = useParams();
@@ -41,7 +42,7 @@ const Photos = () => {
 
   const columns = [
     {
-      title: "thumbnail",
+      title: "Thumbnail",
       dataIndex: "thumbnailUrl", // this is the value that is parsed from the DB / server side
       render: (thumbnailUrl: string) => (
         <img
@@ -63,9 +64,22 @@ const Photos = () => {
       },
     },
     {
-      title: "title",
+      title: "Url",
+      dataIndex: "url",
+      render: (url: string) => (
+        <img
+          style={{ width: 50, height: 50 }}
+          alt={url}
+          src={url}
+          loading="lazy"
+        />
+      ),
+    },
+    {
+      title: "Title",
       dataIndex: "title",
       key: "title",
+      width: '70%',
       //  onCell: () => alert("clicked")
     },
   ];
@@ -82,15 +96,15 @@ const Photos = () => {
   console.log("photos-->", photos);
 
   return (
-    <div>
-      <div>
-        <Descriptions
-          title={`Owner - ${name} and his album - ${title}`}
-          bordered
-        />
+    <AppLayout>
+    <div  style={{minWidth: "80%"}}>
 
-        <div data-testid="photo-table">
-          <Table dataSource={dataSource} columns={columns} pagination={false} />
+        <div style={{color:"white"}}>
+        {`Owner - ${name} and his album - ${title}`}
+        </div>
+
+        <div data-testid="photo-table" >
+          <Table dataSource={dataSource} columns={columns} pagination={false}  />
         </div>
         {imgUrl && (
           <PhotoModal
@@ -135,7 +149,8 @@ const Photos = () => {
         ]}
       />
       </div>
-    </div>
+    </AppLayout>
+     
   );
 };
 

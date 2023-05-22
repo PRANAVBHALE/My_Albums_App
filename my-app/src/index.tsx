@@ -3,6 +3,7 @@ import reportWebVitals from "./reportWebVitals";
 import Routes from "./pages/Routes";
 import { setupStore } from "./store/store";
 import { Provider } from "react-redux";
+import './index.css'
 
 const store = setupStore();
 
