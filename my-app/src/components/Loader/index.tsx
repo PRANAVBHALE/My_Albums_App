@@ -11,6 +11,7 @@ const Loader = () => {
         justifyContent: "center",
         height: "100vh",
       }}
+      data-testid="loader"
     >
       <Space size="middle">
         <Spin size="large" />
