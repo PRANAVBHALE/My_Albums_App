@@ -8,6 +8,7 @@ const PhotoModal = (props: modalType) => {
     <>
       <div data-testid="modal">
         <Modal
+          width={800}
           centered
           open={props.modalOpen}
           onCancel={() => {

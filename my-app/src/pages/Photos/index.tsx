@@ -1,8 +1,10 @@
+import styles from './photoPage.module.css'
+
 import { useLocation, useParams } from "react-router-dom";
 import ErrorMsg from "../../components/ErrorMsg";
 import Loader from "../../components/Loader";
 import { useGetPhotosListQuery } from "../../services/photosApi";
-import { Descriptions, Select, Table } from "antd";
+import { Select, Table } from "antd";
 import { useState } from "react";
 import PhotoModal from "../../components/Modal";
 import {IrecordType,recordType,routeParamsType} from './types'
@@ -113,7 +115,7 @@ const Photos = () => {
             setModalOpen={setModalOpen}
             setImgUrl={setImgUrl}
           >
-            <div style={{ display: "flex" }}>
+            <div className={styles.modal}>
               <img
                 style={{ width: 300, height: 300 }}
                 src={imgUrl}
@@ -124,14 +126,18 @@ const Photos = () => {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  textAlign: "center",
+                  textAlign: "left",
+                  fontSize:'medium'
                 }}
               >
-                Owner - {name}
+                <div>
+                Owner - <span className={styles.details}>{name}</span> 
                 <br />
-                Album - {title}
+                Album - <span className={styles.details}>{title}</span> 
                 <br />
-                Photo - {photoTitle}
+                Photo - <span className={styles.details}>{photoTitle}</span> 
+                </div>
+               
               </div>
             </div>
           </PhotoModal>

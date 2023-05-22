@@ -1,0 +1,17 @@
+.modal{
+  display: flex;
+  justify-content: space-around;
+}
+
+.details{
+  font-weight:600
+}
+
+@media only screen and (max-width: 820px) {
+  .modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
