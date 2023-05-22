@@ -77,7 +77,7 @@ describe("Photo component", () => {
 
   it("should display error", async () => {
     server.use(
-      rest.get("https://jsonplaceholder.typicode.com/*", (_req, res, ctx) => {
+      rest.get(`${process.env.REACT_APP_ENDPOINT}/*`, (_req, res, ctx) => {
         return res(ctx.status(500), ctx.json("an error has occurred"));
       })
     );

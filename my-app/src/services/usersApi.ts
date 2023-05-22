@@ -5,7 +5,7 @@ type User = void;
 export const usersApi = createApi({
   reducerPath: "usersApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://jsonplaceholder.typicode.com/",
+    baseUrl: process.env.REACT_APP_ENDPOINT,
   }),
   endpoints: (builder) => ({
     getUsersList: builder.query<User, void>({

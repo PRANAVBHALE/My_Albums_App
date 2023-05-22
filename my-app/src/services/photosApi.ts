@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const photosApi = createApi({
   reducerPath: "photosApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://jsonplaceholder.typicode.com/",
+    baseUrl: process.env.REACT_APP_ENDPOINT,
   }),
   endpoints: (builder) => ({
     getPhotosList: builder.query({
