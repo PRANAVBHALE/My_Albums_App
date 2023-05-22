@@ -4,7 +4,7 @@ import Loader from "../../components/Loader";
 import { useGetPhotosListQuery } from "../../services/photosApi";
 import { Descriptions, Table } from "antd";
 import { useState } from "react";
-import PhotoModal from "../../components/PhotoModal";
+import PhotoModal from "../../components/Modal";
 
 type recordType = {
   albumId: number;
