@@ -9,6 +9,7 @@ import { useState } from "react";
 import PhotoModal from "../../components/Modal";
 import {IrecordType,recordType,routeParamsType} from './types'
 import AppLayout from "../../components/Layout";
+import SelectPage from '../../components/SelectPage';
 
 const Photos = () => {
   const routeParams:routeParamsType = useParams();
@@ -143,17 +144,7 @@ const Photos = () => {
           </PhotoModal>
         )}
 
-      <Select
-        defaultValue={pageLimit + " / page"}
-        style={{ width: 120 }}
-        onChange={onPageChange}
-        options={[
-          { value: "20", label: "20 / page" },
-          { value: "30", label: "30 / page" },
-          { value: "50", label: "50 / page" },
-          { value: "100", label: "100 / page" },
-        ]}
-      />
+      <SelectPage pageLimit={pageLimit} onPageChange={(pageLimit:string) => onPageChange(pageLimit)}/>
       </div>
     </AppLayout>
      

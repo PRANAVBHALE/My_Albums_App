@@ -9,6 +9,7 @@ import { useGetUsersListQuery } from "../../services/usersApi";
 import { useHistory } from "react-router-dom";
 import {recordType} from './types'
 import AppLayout from "../../components/Layout";
+import SelectPage from "../../components/SelectPage";
 
 const Albums = () => {
   const [pageLimit, setPageLimit] = useState("20");
@@ -105,17 +106,7 @@ const Albums = () => {
           },
         })}
       />
-      <Select
-        defaultValue={pageLimit + " / page"}
-        style={{ width: 120 }}
-        onChange={onPageChange}
-        options={[
-          { value: "20", label: "20 / page" },
-          { value: "30", label: "30 / page" },
-          { value: "50", label: "50 / page" },
-          { value: "100", label: "100 / page" },
-        ]}
-      />
+      <SelectPage pageLimit={pageLimit} onPageChange={(pageLimit:string) => onPageChange(pageLimit)}/>
     </div>
     </AppLayout>
     
