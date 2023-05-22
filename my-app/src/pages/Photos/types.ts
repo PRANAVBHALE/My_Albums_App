@@ -15,3 +15,9 @@ export interface IrecordType {
     title: string;
   };
 }
+
+export type routeParamsType = {
+  limit:string,
+  start:string,
+  albumid:string
+}

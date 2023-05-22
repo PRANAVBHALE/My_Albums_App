@@ -40,7 +40,7 @@ const Albums = () => {
     const { albumId } = record;
     //  history.push(`/photo/album/${albumId}/0/5`)
     history.push({
-      pathname: `/photo/album/${albumId}/0/5`,
+      pathname: `/photo/album/${albumId}/0/20`,
       state: {
         record,
       },
