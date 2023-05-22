@@ -3,10 +3,12 @@ import type { PreloadedState } from '@reduxjs/toolkit'
 
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { albumsApi } from "../services/albumsApi";
+import { usersApi } from "../services/usersApi";
 
 let rootReducer = combineReducers(
   {
     [albumsApi.reducerPath]: albumsApi.reducer,
+    [usersApi.reducerPath]: usersApi.reducer,
   }
 ) 
 
@@ -17,6 +19,7 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware().concat(
         albumsApi.middleware,
+        usersApi.middleware
       ),
   });
 }
