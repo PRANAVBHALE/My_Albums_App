@@ -20,13 +20,13 @@ global.matchMedia =
 
 export const handlers = [
   rest.get(
-    "https://jsonplaceholder.typicode.com/albums?_start=0&_limit=5",
+    `${process.env.REACT_APP_ENDPOINT}/albums?_start=0&_limit=5`,
     (_req, res, ctx) => {
       return res(ctx.json(AlbumsList));
     }
   ),
 
-  rest.get("https://jsonplaceholder.typicode.com/users", (_req, res, ctx) => {
+  rest.get(`${process.env.REACT_APP_ENDPOINT}/users`, (_req, res, ctx) => {
     return res(ctx.json(UsersList));
   }),
 ];
