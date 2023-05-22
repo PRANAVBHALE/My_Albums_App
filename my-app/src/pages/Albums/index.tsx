@@ -7,14 +7,8 @@ import mapUsersWithAlbums from "../../helper/mapUsersWithAlbums";
 import { useGetAlbumListQuery } from "../../services/albumsApi";
 import { useGetUsersListQuery } from "../../services/usersApi";
 import { useHistory } from "react-router-dom";
+import {recordType} from './types'
 
-type recordType = {
-  albumId: number;
-  id: number;
-  imgUrl: string;
-  name: string;
-  title: string;
-};
 
 const Albums = () => {
   const [pageLimit, setPageLimit] = useState("20");

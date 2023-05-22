@@ -1,39 +1,6 @@
 import { imgUrls } from "./imgUrls";
+import {usersType ,albumsType ,Iresult } from './types'
 
-export type usersType = [
-  {
-    id: number;
-    name: string;
-    username: string;
-    email: string;
-    address: {
-      street: string;
-      suite: string;
-      city: string;
-      zipcode: string;
-      geo: {
-        lat: string;
-        lng: string;
-      };
-    };
-  }
-];
-
-type albumsType = [
-  {
-    userId: number;
-    id: number;
-    title: string;
-  }
-];
-
-interface Iresult {
-  id: number;
-  name: string;
-  albumId: number;
-  title: string;
-  imgUrl: string;
-}
 
 const mapUsersWithAlbums = (
   users: usersType | any[],
