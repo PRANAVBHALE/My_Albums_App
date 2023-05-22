@@ -5,24 +5,7 @@ import { useGetPhotosListQuery } from "../../services/photosApi";
 import { Descriptions, Table } from "antd";
 import { useState } from "react";
 import PhotoModal from "../../components/Modal";
-
-type recordType = {
-  albumId: number;
-  id: number;
-  url: string;
-  name: string;
-  title: string;
-};
-
-interface IrecordType {
-  record: {
-    albumId: number;
-    id: number;
-    imgUrl: string;
-    name: string;
-    title: string;
-  };
-}
+import {IrecordType,recordType} from './types'
 
 const Photos = () => {
   const routeParams = useParams();

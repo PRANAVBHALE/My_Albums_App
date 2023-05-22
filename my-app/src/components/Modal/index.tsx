@@ -1,15 +1,9 @@
 import { Modal } from "antd";
 import React from "react";
-
-type modalType = {
-  setModalOpen: Function;
-  setImgUrl: Function;
-  setPhotoTitle: Function;
-  children: React.ReactNode;
-  modalOpen: boolean;
-};
+import {modalType} from './types'
 
 const PhotoModal = (props: modalType) => {
+
   return (
     <>
       <div data-testid="modal">
