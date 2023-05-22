@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Albums from "../Albums";
 import Photos from "../Photos";
 import routePaths from "./routesConstants";
+import AppHeader from "../../components/AppHeader";
 
 const Routes = () => {
   const [isFirstLoading, setIsFirstLoading] = useState(true);
@@ -16,6 +17,8 @@ const Routes = () => {
 
 
   return (
+    <>
+    <AppHeader />
     <BrowserRouter>
       <Switch>
         <Route path={albumsUrlPath} exact component={Albums} />
@@ -23,6 +26,8 @@ const Routes = () => {
         <Route path={`${photosUrlPath}:albumid/:start/:limit`} component={Photos} />
       </Switch>
     </BrowserRouter>
+    </>
+    
   );
 };
 export default Routes;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { Select, Table } from "antd";
 import ErrorMsg from "../../components/ErrorMsg";
@@ -8,7 +8,7 @@ import { useGetAlbumListQuery } from "../../services/albumsApi";
 import { useGetUsersListQuery } from "../../services/usersApi";
 import { useHistory } from "react-router-dom";
 import {recordType} from './types'
-
+import AppLayout from "../../components/Layout";
 
 const Albums = () => {
   const [pageLimit, setPageLimit] = useState("20");
@@ -67,7 +67,7 @@ const Albums = () => {
 
   const columns = [
     {
-      title: "imgUrl",
+      title: "Img Url",
       dataIndex: "imgUrl",
       render: (imgUrl: string) => (
         <img
@@ -80,19 +80,20 @@ const Albums = () => {
     },
 
     {
-      title: "name",
+      title: "Name",
       dataIndex: "name",
       key: "name",
     },
     {
-      title: "title",
+      title: "Title",
       dataIndex: "title",
       key: "title",
     },
   ];
 
   return (
-    <div data-testid="album-table">
+  <AppLayout>
+      <div data-testid="album-table" style={{minWidth: "80%"}}>
       Albums
       <Table
         dataSource={dataSource}
@@ -116,6 +117,8 @@ const Albums = () => {
         ]}
       />
     </div>
+    </AppLayout>
+    
   );
 };
 
