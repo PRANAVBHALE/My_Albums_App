@@ -4,6 +4,7 @@ import { rest } from "msw";
 import { setupServer } from "msw/node";
 import { UsersList } from "./mocks/UsersList.mock";
 import { AlbumsList } from "./mocks/AlbumsList.mock";
+import PhotosList from "./mocks/PhotosList.mock";
 
 global.fetch = fetch;
 global.Headers = Headers;
@@ -28,6 +29,10 @@ export const handlers = [
 
   rest.get(`${process.env.REACT_APP_ENDPOINT}/users`, (_req, res, ctx) => {
     return res(ctx.json(UsersList));
+  }),
+
+  rest.get(`${process.env.REACT_APP_ENDPOINT}/photos?albumId=5&_start=0&_limit=5`, (_req, res, ctx) => {
+    return res(ctx.json(PhotosList))
   }),
 ];
 
