@@ -31,9 +31,12 @@ export const handlers = [
     return res(ctx.json(UsersList));
   }),
 
-  rest.get(`${process.env.REACT_APP_ENDPOINT}/photos?albumId=5&_start=0&_limit=5`, (_req, res, ctx) => {
-    return res(ctx.json(PhotosList))
-  }),
+  rest.get(
+    `${process.env.REACT_APP_ENDPOINT}/photos?albumId=5&_start=0&_limit=5`,
+    (_req, res, ctx) => {
+      return res(ctx.json(PhotosList));
+    }
+  ),
 ];
 
 export const server = setupServer(...handlers);

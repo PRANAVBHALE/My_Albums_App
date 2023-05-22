@@ -1,18 +1,14 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import userEvent from '@testing-library/user-event'
+import userEvent from "@testing-library/user-event";
 
 import PhotoModal from ".";
 
 describe("Modal", () => {
-
   const handleCloseModal = jest.fn();
 
   it("should match snapshot", () => {
-    let view =     render(
-      <PhotoModal
-        modalOpen={true}
-        handleCloseModal={handleCloseModal}
-      >
+    let view = render(
+      <PhotoModal modalOpen={true} handleCloseModal={handleCloseModal}>
         Hello
       </PhotoModal>
     );
@@ -22,10 +18,7 @@ describe("Modal", () => {
 
   it("should open", () => {
     render(
-      <PhotoModal
-        modalOpen={true}
-        handleCloseModal={handleCloseModal}
-      >
+      <PhotoModal modalOpen={true} handleCloseModal={handleCloseModal}>
         Hello
       </PhotoModal>
     );
@@ -36,10 +29,7 @@ describe("Modal", () => {
 
   it("should handle x close btn", async () => {
     render(
-      <PhotoModal
-        modalOpen={true}
-        handleCloseModal={handleCloseModal}
-      >
+      <PhotoModal modalOpen={true} handleCloseModal={handleCloseModal}>
         Hello
       </PhotoModal>
     );
@@ -48,8 +38,8 @@ describe("Modal", () => {
       name: /close/i,
     });
 
-  //  fireEvent.click(xBtn);
-    userEvent.click(xBtn)
+    //  fireEvent.click(xBtn);
+    userEvent.click(xBtn);
 
     await waitFor(async () => {
       await expect(handleCloseModal).toHaveBeenCalledTimes(1);

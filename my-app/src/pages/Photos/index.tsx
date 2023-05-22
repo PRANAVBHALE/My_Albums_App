@@ -1,31 +1,30 @@
-import styles from './photoPage.module.css'
+import styles from "./photoPage.module.css";
 
 import { useLocation, useParams } from "react-router-dom";
 import ErrorMsg from "../../components/ErrorMsg";
 import Loader from "../../components/Loader";
 import { useGetPhotosListQuery } from "../../services/photosApi";
-import { Select, Table } from "antd";
 import { useState } from "react";
 import PhotoModal from "../../components/Modal";
-import {IrecordType,recordType,routeParamsType} from './types'
+import { IrecordType, recordType, routeParamsType } from "./types";
 import AppLayout from "../../components/Layout";
-import SelectPage from '../../components/SelectPage';
+import SelectPage from "../../components/SelectPage";
+import { Table } from "antd";
 
 const Photos = () => {
-  const routeParams:routeParamsType = useParams();
-  const {limit ,start , albumid} = routeParams
+  const routeParams: routeParamsType = useParams();
+  const { limit, start, albumid } = routeParams;
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [photoTitle, setPhotoTitle] = useState("");
   const [pageLimit, setPageLimit] = useState(limit);
 
-
   const params = {
     start,
     pageLimit,
-    albumid
-  }
+    albumid,
+  };
 
   const {
     data: photos,
@@ -46,7 +45,7 @@ const Photos = () => {
     setModalOpen(false);
     setImgUrl("");
     setPhotoTitle("");
-  }
+  };
 
   const columns = [
     {
@@ -86,7 +85,7 @@ const Photos = () => {
       title: "Title",
       dataIndex: "title",
       key: "title",
-      width: '70%',
+      width: "70%",
       //  onCell: () => alert("clicked")
     },
   ];
@@ -102,17 +101,19 @@ const Photos = () => {
 
   return (
     <AppLayout>
-    <div  style={{minWidth: "80%"}}>
-
-        <div style={{color:"white"}}>
-        {`Owner - ${name} and his album - ${title}`}
+      <div style={{ minWidth: "80%" }}>
+        <div style={{ color: "white" }}>
+          {`Owner - ${name} and his album - ${title}`}
         </div>
 
-        <div data-testid="photo-table" >
-          <Table dataSource={dataSource} columns={columns} pagination={false}  />
+        <div data-testid="photo-table">
+          <Table dataSource={dataSource} columns={columns} pagination={false} />
         </div>
         {imgUrl && (
-          <PhotoModal handleCloseModal = {() => handleCloseModal()}  modalOpen={modalOpen}>
+          <PhotoModal
+            handleCloseModal={() => handleCloseModal()}
+            modalOpen={modalOpen}
+          >
             <div className={styles.modal}>
               <img
                 style={{ width: 300, height: 300 }}
@@ -125,26 +126,27 @@ const Photos = () => {
                   display: "flex",
                   alignItems: "center",
                   textAlign: "left",
-                  fontSize:'medium'
+                  fontSize: "medium",
                 }}
               >
                 <div>
-                Owner - <span className={styles.details}>{name}</span> 
-                <br />
-                Album - <span className={styles.details}>{title}</span> 
-                <br />
-                Photo - <span className={styles.details}>{photoTitle}</span> 
+                  Owner - <span className={styles.details}>{name}</span>
+                  <br />
+                  Album - <span className={styles.details}>{title}</span>
+                  <br />
+                  Photo - <span className={styles.details}>{photoTitle}</span>
                 </div>
-               
               </div>
             </div>
           </PhotoModal>
         )}
 
-      <SelectPage pageLimit={pageLimit} onPageChange={(pageLimit:string) => onPageChange(pageLimit)}/>
+        <SelectPage
+          pageLimit={pageLimit}
+          onPageChange={(pageLimit: string) => onPageChange(pageLimit)}
+        />
       </div>
     </AppLayout>
-     
   );
 };
 

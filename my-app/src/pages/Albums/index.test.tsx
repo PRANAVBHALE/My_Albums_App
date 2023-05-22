@@ -30,9 +30,12 @@ describe("Albums component", () => {
 
   it("should display error", async () => {
     server.use(
-      rest.get(`${process.env.REACT_APP_ENDPOINT}xxxxxxxxxxx/*`, (_req, res, ctx) => {
-        return res(ctx.status(500), ctx.json("an error has occurred"));
-      })
+      rest.get(
+        `${process.env.REACT_APP_ENDPOINT}xxxxxxxxxxx/*`,
+        (_req, res, ctx) => {
+          return res(ctx.status(500), ctx.json("an error has occurred"));
+        }
+      )
     );
 
     const { getByText } = renderWithProviders(<Albums />);
@@ -82,7 +85,6 @@ describe("Albums component", () => {
 
       expect(nameColumn).toBeInTheDocument();
 
-     
       expect(titleColumn).toBeInTheDocument();
     });
   });

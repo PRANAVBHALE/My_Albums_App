@@ -17,7 +17,7 @@ export interface IrecordType {
 }
 
 export type routeParamsType = {
-  limit:string,
-  start:string,
-  albumid:string
-}
+  limit: string;
+  start: string;
+  albumid: string;
+};

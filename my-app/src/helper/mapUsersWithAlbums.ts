@@ -1,6 +1,5 @@
 import { imgUrls } from "./imgUrls";
-import {usersType ,albumsType ,Iresult } from './types'
-
+import { usersType, albumsType, Iresult } from "./types";
 
 const mapUsersWithAlbums = (
   users: usersType | any[],

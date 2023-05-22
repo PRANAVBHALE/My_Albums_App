@@ -1,23 +1,22 @@
-import {selectType} from './types'
-import { Select } from "antd"
+import { selectType } from "./types";
+import { Select } from "antd";
 
-const SelectPage = (props:selectType) => {
+const SelectPage = (props: selectType) => {
+  const { pageLimit } = props;
 
-  const {pageLimit} = props
-
-  return(
+  return (
     <Select
-    defaultValue={pageLimit + " / page"}
-    style={{ width: 120 }}
-    onChange={(pageLimit) => props.onPageChange(pageLimit)}
-    options={[
-      { value: "20", label: "20 / page" },
-      { value: "30", label: "30 / page" },
-      { value: "50", label: "50 / page" },
-      { value: "100", label: "100 / page" },
-    ]}
-  />
-  )
-}
+      defaultValue={pageLimit + " / page"}
+      style={{ width: 120 }}
+      onChange={(pageLimit) => props.onPageChange(pageLimit)}
+      options={[
+        { value: "20", label: "20 / page" },
+        { value: "30", label: "30 / page" },
+        { value: "50", label: "50 / page" },
+        { value: "100", label: "100 / page" },
+      ]}
+    />
+  );
+};
 
-export default SelectPage
+export default SelectPage;

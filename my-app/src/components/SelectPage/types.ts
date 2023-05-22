@@ -1,4 +1,4 @@
 export type selectType = {
-  pageLimit:string,
-  onPageChange:Function
-}
+  pageLimit: string;
+  onPageChange: Function;
+};
