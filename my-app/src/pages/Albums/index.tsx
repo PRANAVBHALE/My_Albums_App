@@ -8,25 +8,24 @@ import { useGetAlbumListQuery } from "../../services/albumsApi";
 import { useGetUsersListQuery } from "../../services/usersApi";
 import { useHistory } from "react-router-dom";
 
-type recordType={
-  albumId: number
-  id: number
-  imgUrl: string
-  name: string
-  title: string
-}
+type recordType = {
+  albumId: number;
+  id: number;
+  imgUrl: string;
+  name: string;
+  title: string;
+};
 
 const Albums = () => {
+  const [pageLimit, setPageLimit] = useState("20");
+  const [start, setStart] = useState("0");
 
-  const [pageLimit, setPageLimit] = useState("20")
-  const [start, setStart] = useState("0")
-
-  const history = useHistory()
+  const history = useHistory();
 
   let params = {
     start,
-    pageLimit
-  }
+    pageLimit,
+  };
 
   const {
     data: albums = [],
@@ -42,21 +41,21 @@ const Albums = () => {
     isError: userError,
   } = useGetUsersListQuery();
 
-  const handleRowClick = (record:recordType) => {
-    console.log('clicked', record)
-    const { albumId } = record
+  const handleRowClick = (record: recordType) => {
+    console.log("clicked", record);
+    const { albumId } = record;
     //  history.push(`/photo/album/${albumId}/0/5`)
     history.push({
-        pathname: `/photo/album/${albumId}/0/5`,
-        state: {
-            record
-        }
-    })
-}
+      pathname: `/photo/album/${albumId}/0/5`,
+      state: {
+        record,
+      },
+    });
+  };
 
-const onPageChange = (value:string) => {
-  setPageLimit(value)
-}
+  const onPageChange = (value: string) => {
+    setPageLimit(value);
+  };
 
   if (albumLoader || albumFetcher || userLoader || userFetcher) {
     return <Loader />;
@@ -99,30 +98,29 @@ const onPageChange = (value:string) => {
   ];
 
   return (
-	<div data-testid="album-table">
+    <div data-testid="album-table">
       Albums
-      <Table 
-        dataSource={dataSource} 
-        columns={columns} 
-        pagination={false} 
-        onRow={record => ({
+      <Table
+        dataSource={dataSource}
+        columns={columns}
+        pagination={false}
+        onRow={(record) => ({
           onClick: () => {
-              handleRowClick(record);
-          }
-      })}
-        />
-
+            handleRowClick(record);
+          },
+        })}
+      />
       <Select
-        defaultValue={pageLimit+" / page"}
+        defaultValue={pageLimit + " / page"}
         style={{ width: 120 }}
         onChange={onPageChange}
         options={[
-        { value: '20', label: '20 / page' },
-        { value: '30', label: '30 / page'},
-        { value: '50', label: '50 / page' },
-        { value: '100', label: '100 / page' },
-          ]}
-        />
+          { value: "20", label: "20 / page" },
+          { value: "30", label: "30 / page" },
+          { value: "50", label: "50 / page" },
+          { value: "100", label: "100 / page" },
+        ]}
+      />
     </div>
   );
 };
