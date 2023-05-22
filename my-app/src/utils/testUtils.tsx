@@ -7,6 +7,7 @@ import {RootState ,AppStore} from '../store/store'
 // As a basic setup, import your same slice reducers
 import { albumsApi } from '../services/albumsApi'
 import { usersApi } from '../services/usersApi'
+import { photosApi } from '../services/photosApi'
 
 // This type interface extends the default options for render from RTL, as well
 // as allows the user to specify other things such as initialState, store.
@@ -25,12 +26,15 @@ export function renderWithProviders(
             reducer: {
                 [albumsApi.reducerPath]: albumsApi.reducer,
                 [usersApi.reducerPath]: usersApi.reducer,
+                [photosApi.reducerPath]: photosApi.reducer,
+
             },
             //preloadedState:any = {},
             middleware: getDefaultMiddleware =>
                 getDefaultMiddleware().concat(
                     albumsApi.middleware,
                     usersApi.middleware,
+                    photosApi.middleware,
                 ),
         }),
         ...renderOptions
