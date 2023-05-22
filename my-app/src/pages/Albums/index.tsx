@@ -1,3 +1,5 @@
+import ErrorMsg from "../../components/ErrorMsg";
+import Loader from "../../components/Loader";
 import { useGetAlbumListQuery } from "../../services/albumsApi"
 
 
@@ -11,11 +13,11 @@ const Albums = () => {
   } = useGetAlbumListQuery(1);
 
   if (albumLoader || albumFetcher) {
-    return <div>Loading</div>;
+    return <Loader />;
   }
 
   if (albumError) {
-    return <div>Error</div>;
+    return <ErrorMsg />;
   }
 
   console.log('albums--->',albums)
