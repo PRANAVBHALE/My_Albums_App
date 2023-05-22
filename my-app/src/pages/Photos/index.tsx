@@ -9,10 +9,10 @@ import { useState } from "react";
 import PhotoModal from "../../components/Modal";
 import {IrecordType,recordType,routeParamsType} from './types'
 import AppLayout from "../../components/Layout";
+import SelectPage from '../../components/SelectPage';
 
 const Photos = () => {
   const routeParams:routeParamsType = useParams();
-  console.log(routeParams)
   const {limit ,start , albumid} = routeParams
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
@@ -42,6 +42,12 @@ const Photos = () => {
     setPageLimit(value);
   };
 
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setImgUrl("");
+    setPhotoTitle("");
+  }
+
   const columns = [
     {
       title: "Thumbnail",
@@ -57,7 +63,6 @@ const Photos = () => {
       onCell: (record: recordType) => {
         return {
           onClick: () => {
-            console.log("modal---", record);
             setModalOpen(true);
             setImgUrl(record.url);
             setPhotoTitle(record.title);
@@ -95,8 +100,6 @@ const Photos = () => {
     return <ErrorMsg />;
   }
 
-  console.log("photos-->", photos);
-
   return (
     <AppLayout>
     <div  style={{minWidth: "80%"}}>
@@ -109,12 +112,7 @@ const Photos = () => {
           <Table dataSource={dataSource} columns={columns} pagination={false}  />
         </div>
         {imgUrl && (
-          <PhotoModal
-            setPhotoTitle={setPhotoTitle}
-            modalOpen={modalOpen}
-            setModalOpen={setModalOpen}
-            setImgUrl={setImgUrl}
-          >
+          <PhotoModal handleCloseModal = {() => handleCloseModal()}  modalOpen={modalOpen}>
             <div className={styles.modal}>
               <img
                 style={{ width: 300, height: 300 }}
@@ -143,17 +141,7 @@ const Photos = () => {
           </PhotoModal>
         )}
 
-      <Select
-        defaultValue={pageLimit + " / page"}
-        style={{ width: 120 }}
-        onChange={onPageChange}
-        options={[
-          { value: "20", label: "20 / page" },
-          { value: "30", label: "30 / page" },
-          { value: "50", label: "50 / page" },
-          { value: "100", label: "100 / page" },
-        ]}
-      />
+      <SelectPage pageLimit={pageLimit} onPageChange={(pageLimit:string) => onPageChange(pageLimit)}/>
       </div>
     </AppLayout>
      

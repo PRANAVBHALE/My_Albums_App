@@ -26,7 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts  test -u --coverage",
+    "test": "react-scripts  test -u --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx}\""
   },

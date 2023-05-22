@@ -1,14 +1,11 @@
 import React from "react";
 import Photo from ".";
-import { screen, render, fireEvent, waitFor } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 
 import { server } from "../../utils/handlers";
+
 import { renderWithProviders } from "../../utils/testUtils";
 import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Redirect,
   MemoryRouter,
 } from "react-router-dom";
 import { rest } from "msw";
@@ -77,7 +74,7 @@ describe("Photo component", () => {
 
   it("should display error", async () => {
     server.use(
-      rest.get(`${process.env.REACT_APP_ENDPOINT}/*`, (_req, res, ctx) => {
+      rest.get(`${process.env.REACT_APP_ENDPOINT}xxxxxxxxxxx/*`, (_req, res, ctx) => {
         return res(ctx.status(500), ctx.json("an error has occurred"));
       })
     );
