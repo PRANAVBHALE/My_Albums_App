@@ -11,11 +11,7 @@ const PhotoModal = (props: modalType) => {
           width={800}
           centered
           open={props.modalOpen}
-          onCancel={() => {
-            props.setModalOpen(false);
-            props.setImgUrl("");
-            props.setPhotoTitle("");
-          }}
+          onCancel={() => props.handleCloseModal()}
           footer={null}
         >
           {props.children}

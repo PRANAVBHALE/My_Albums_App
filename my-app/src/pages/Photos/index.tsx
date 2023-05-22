@@ -43,6 +43,12 @@ const Photos = () => {
     setPageLimit(value);
   };
 
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setImgUrl("");
+    setPhotoTitle("");
+  }
+
   const columns = [
     {
       title: "Thumbnail",
@@ -110,12 +116,7 @@ const Photos = () => {
           <Table dataSource={dataSource} columns={columns} pagination={false}  />
         </div>
         {imgUrl && (
-          <PhotoModal
-            setPhotoTitle={setPhotoTitle}
-            modalOpen={modalOpen}
-            setModalOpen={setModalOpen}
-            setImgUrl={setImgUrl}
-          >
+          <PhotoModal handleCloseModal = {() => handleCloseModal()}  modalOpen={modalOpen}>
             <div className={styles.modal}>
               <img
                 style={{ width: 300, height: 300 }}
