@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684790036501" clover="3.2.0">
-  <project timestamp="1684790036501" name="All files">
-    <metrics statements="152" coveredstatements="109" conditionals="44" coveredconditionals="30" methods="48" coveredmethods="28" elements="244" coveredelements="167" complexity="0" loc="152" ncloc="152" packages="15" files="27" classes="27"/>
+<coverage generated="1684792389116" clover="3.2.0">
+  <project timestamp="1684792389116" name="All files">
+    <metrics statements="152" coveredstatements="109" conditionals="44" coveredconditionals="30" methods="48" coveredmethods="28" elements="244" coveredelements="167" complexity="0" loc="152" ncloc="152" packages="15" files="29" classes="29"/>
     <package name="src">
       <metrics statements="12" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>
       <file name="index.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\index.tsx">
@@ -45,10 +45,13 @@
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\components\Layout\index.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="8" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
+      </file>
+      <file name="types.ts" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\components\Layout\types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="src.components.Loader">
@@ -75,10 +78,13 @@
       <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <file name="index.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\components\SelectPage\index.tsx">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="7" type="stmt"/>
-        <line num="7" count="7" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+      </file>
+      <file name="types.ts" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\components\SelectPage\types.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       </file>
     </package>
     <package name="src.helper">

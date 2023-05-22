@@ -1,4 +1,5 @@
 
+import {layoutType} from './types'
 import { Layout } from 'antd';
 const { Content } = Layout;
 
@@ -13,7 +14,7 @@ const contentStyle: React.CSSProperties = {
   backgroundColor: "#36454F",
 };
 
-const AppLayout = (props) => {
+const AppLayout = (props:layoutType) => {
   return(
     <Content style={contentStyle}>
       {props.children}

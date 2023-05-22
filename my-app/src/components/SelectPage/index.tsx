@@ -1,6 +1,7 @@
+import {selectType} from './types'
 import { Select } from "antd"
 
-const SelectPage = (props) => {
+const SelectPage = (props:selectType) => {
 
   const {pageLimit} = props
 

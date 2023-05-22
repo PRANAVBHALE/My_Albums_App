@@ -8,14 +8,22 @@ Object {
       <main
         class="ant-layout-content css-dev-only-do-not-override-15rg2km"
         style="display: flex; align-items: center; justify-content: center; text-align: center; min-height: 120px; line-height: 120px; color: rgb(255, 255, 255); background-color: rgb(54, 69, 79);"
-      />
+      >
+        <div>
+          Hello
+        </div>
+      </main>
     </div>
   </body>,
   "container": <div>
     <main
       class="ant-layout-content css-dev-only-do-not-override-15rg2km"
       style="display: flex; align-items: center; justify-content: center; text-align: center; min-height: 120px; line-height: 120px; color: rgb(255, 255, 255); background-color: rgb(54, 69, 79);"
-    />
+    >
+      <div>
+        Hello
+      </div>
+    </main>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
