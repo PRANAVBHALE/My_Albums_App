@@ -8,8 +8,8 @@ export const photosApi = createApi({
   endpoints: (builder) => ({
     getPhotosList: builder.query({
       query: (params) => {
-        let { albumid, start, limit } = params;
-        return `photos?albumId=${albumid}&_start=${start}&_limit=${limit}`;
+        let { albumid, start, pageLimit } = params;
+        return `photos?albumId=${albumid}&_start=${start}&_limit=${pageLimit}`;
       },
     }),
   }),

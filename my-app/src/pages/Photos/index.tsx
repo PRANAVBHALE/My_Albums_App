@@ -2,29 +2,42 @@ import { useLocation, useParams } from "react-router-dom";
 import ErrorMsg from "../../components/ErrorMsg";
 import Loader from "../../components/Loader";
 import { useGetPhotosListQuery } from "../../services/photosApi";
-import { Descriptions, Table } from "antd";
+import { Descriptions, Select, Table } from "antd";
 import { useState } from "react";
 import PhotoModal from "../../components/Modal";
-import {IrecordType,recordType} from './types'
+import {IrecordType,recordType,routeParamsType} from './types'
 
 const Photos = () => {
-  const routeParams = useParams();
+  const routeParams:routeParamsType = useParams();
+  console.log(routeParams)
+  const {limit ,start , albumid} = routeParams
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [photoTitle, setPhotoTitle] = useState("");
-  const [pageLimit, setPageLimit] = useState("20");
+  const [pageLimit, setPageLimit] = useState(limit);
+
+
+  const params = {
+    start,
+    pageLimit,
+    albumid
+  }
 
   const {
     data: photos,
     isLoading: photosLoader,
     isFetching: photosFetching,
     isError: photosError,
-  } = useGetPhotosListQuery(routeParams);
+  } = useGetPhotosListQuery(params);
 
   const { record } = location.state as IrecordType; // Type Casting, then you can get the params passed via router
 
   const { name, title } = record;
+
+  const onPageChange = (value: string) => {
+    setPageLimit(value);
+  };
 
   const columns = [
     {
@@ -109,6 +122,18 @@ const Photos = () => {
             </div>
           </PhotoModal>
         )}
+
+      <Select
+        defaultValue={pageLimit + " / page"}
+        style={{ width: 120 }}
+        onChange={onPageChange}
+        options={[
+          { value: "20", label: "20 / page" },
+          { value: "30", label: "30 / page" },
+          { value: "50", label: "50 / page" },
+          { value: "100", label: "100 / page" },
+        ]}
+      />
       </div>
     </div>
   );
