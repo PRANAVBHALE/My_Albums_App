@@ -30,7 +30,7 @@ describe("Albums component", () => {
 
   it("should display error", async () => {
     server.use(
-      rest.get(`${process.env.REACT_APP_ENDPOINT}/*`, (_req, res, ctx) => {
+      rest.get(`${process.env.REACT_APP_ENDPOINT}xxxxxxxxxxx/*`, (_req, res, ctx) => {
         return res(ctx.status(500), ctx.json("an error has occurred"));
       })
     );
@@ -59,18 +59,31 @@ describe("Albums component", () => {
     });
   });
 
-  it("should img column", async () => {
+  it("should img,title,url column", async () => {
     const { getByText, getByAltText, queryByText, getByTestId, getByRole } =
       renderWithProviders(<Albums />);
 
     const loader = screen.getByTestId("loader");
     expect(loader).toBeInTheDocument();
 
-    await waitFor(() => {
-      const imgColumn = getByRole("columnheader", {
-        name: /imgurl/i,
+    await waitFor(async () => {
+      const titleColumn = await screen.getByRole("columnheader", {
+        name: /Title/i,
+      });
+
+      const nameColumn = await screen.getByRole("columnheader", {
+        name: /Name/i,
+      });
+
+      const imgColumn = await screen.getByRole("columnheader", {
+        name: /Img Url/i,
       });
       expect(imgColumn).toBeInTheDocument();
+
+      expect(nameColumn).toBeInTheDocument();
+
+     
+      expect(titleColumn).toBeInTheDocument();
     });
   });
 });

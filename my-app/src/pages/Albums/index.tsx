@@ -37,7 +37,6 @@ const Albums = () => {
   } = useGetUsersListQuery();
 
   const handleRowClick = (record: recordType) => {
-    console.log("clicked", record);
     const { albumId } = record;
     //  history.push(`/photo/album/${albumId}/0/5`)
     history.push({
@@ -60,8 +59,6 @@ const Albums = () => {
     return <ErrorMsg />;
   }
 
-  console.log("albums--->", albums);
-  console.log("users--->", users);
   const result = users && albums && mapUsersWithAlbums(users, albums);
 
   const dataSource = result;

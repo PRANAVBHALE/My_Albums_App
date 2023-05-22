@@ -13,7 +13,6 @@ import SelectPage from '../../components/SelectPage';
 
 const Photos = () => {
   const routeParams:routeParamsType = useParams();
-  console.log(routeParams)
   const {limit ,start , albumid} = routeParams
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
@@ -64,7 +63,6 @@ const Photos = () => {
       onCell: (record: recordType) => {
         return {
           onClick: () => {
-            console.log("modal---", record);
             setModalOpen(true);
             setImgUrl(record.url);
             setPhotoTitle(record.title);
@@ -101,8 +99,6 @@ const Photos = () => {
   if (photosError) {
     return <ErrorMsg />;
   }
-
-  console.log("photos-->", photos);
 
   return (
     <AppLayout>
