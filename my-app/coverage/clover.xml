@@ -1,22 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1684744237123" clover="3.2.0">
-  <project timestamp="1684744237123" name="All files">
-    <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2" elements="7" coveredelements="7" complexity="0" loc="5" ncloc="5" packages="2" files="2" classes="2"/>
-    <package name="ErrorMsg">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\components\ErrorMsg\index.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
+<coverage generated="1684745771260" clover="3.2.0">
+  <project timestamp="1684745771260" name="All files">
+    <metrics statements="36" coveredstatements="36" conditionals="20" coveredconditionals="20" methods="13" coveredmethods="13" elements="69" coveredelements="69" complexity="0" loc="36" ncloc="36" packages="4" files="6" classes="6"/>
+    <package name="pages.Albums">
+      <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
+      <file name="index.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\pages\Albums\index.tsx">
+        <metrics statements="14" coveredstatements="14" conditionals="15" coveredconditionals="15" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="14" type="stmt"/>
+        <line num="21" count="13" type="stmt"/>
+        <line num="23" count="13" type="cond" truecount="6" falsecount="0"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="27" count="3" type="cond" truecount="4" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="42" count="10" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="Loader">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="index.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\components\Loader\index.tsx">
-        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
+    <package name="store">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="store.ts" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\store\store.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="16" coveredstatements="16" conditionals="5" coveredconditionals="5" methods="9" coveredmethods="9"/>
+      <file name="handlers.ts" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\utils\handlers.ts">
+        <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="6" coveredmethods="6"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="12" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="4" type="stmt"/>
+        <line num="26" count="4" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="37" count="5" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+      </file>
+      <file name="testUtils.tsx" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\utils\testUtils.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils.mocks">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="AlbumsList.mock.ts" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\utils\mocks\AlbumsList.mock.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="UsersList.mock.ts" path="D:\Germany-interviews\Chemondis\My_Albums_App\my-app\src\utils\mocks\UsersList.mock.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
       </file>
     </package>
   </project>

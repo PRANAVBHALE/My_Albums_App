@@ -61,7 +61,7 @@ const Albums = () => {
   ];
 
   return (
-    <div>
+	<div data-testid="album-table">
       Albums
       <Table dataSource={dataSource} columns={columns} pagination={false} />
     </div>
