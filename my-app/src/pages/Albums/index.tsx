@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-import { Select, Table } from "antd";
 import ErrorMsg from "../../components/ErrorMsg";
 import Loader from "../../components/Loader";
 import mapUsersWithAlbums from "../../helper/mapUsersWithAlbums";
 import { useGetAlbumListQuery } from "../../services/albumsApi";
 import { useGetUsersListQuery } from "../../services/usersApi";
 import { useHistory } from "react-router-dom";
-import {recordType} from './types'
+import { recordType } from "./types";
 import AppLayout from "../../components/Layout";
 import SelectPage from "../../components/SelectPage";
+import { Table } from "antd";
 
 const Albums = () => {
   const [pageLimit, setPageLimit] = useState("20");
@@ -90,23 +90,25 @@ const Albums = () => {
   ];
 
   return (
-  <AppLayout>
-      <div data-testid="album-table" style={{minWidth: "80%"}}>
-      Albums
-      <Table
-        dataSource={dataSource}
-        columns={columns}
-        pagination={false}
-        onRow={(record) => ({
-          onClick: () => {
-            handleRowClick(record);
-          },
-        })}
-      />
-      <SelectPage pageLimit={pageLimit} onPageChange={(pageLimit:string) => onPageChange(pageLimit)}/>
-    </div>
+    <AppLayout>
+      <div data-testid="album-table" style={{ minWidth: "80%" }}>
+        Albums
+        <Table
+          dataSource={dataSource}
+          columns={columns}
+          pagination={false}
+          onRow={(record) => ({
+            onClick: () => {
+              handleRowClick(record);
+            },
+          })}
+        />
+        <SelectPage
+          pageLimit={pageLimit}
+          onPageChange={(pageLimit: string) => onPageChange(pageLimit)}
+        />
+      </div>
     </AppLayout>
-    
   );
 };
 

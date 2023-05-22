@@ -1,9 +1,8 @@
 import { Modal } from "antd";
 import React from "react";
-import {modalType} from './types'
+import { modalType } from "./types";
 
 const PhotoModal = (props: modalType) => {
-
   return (
     <>
       <div data-testid="modal">

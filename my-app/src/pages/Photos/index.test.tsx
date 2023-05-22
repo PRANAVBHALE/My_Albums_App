@@ -5,9 +5,7 @@ import { screen, waitFor } from "@testing-library/react";
 import { server } from "../../utils/handlers";
 
 import { renderWithProviders } from "../../utils/testUtils";
-import {
-  MemoryRouter,
-} from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { rest } from "msw";
 
 jest.mock("react-router-dom", () => ({
@@ -74,9 +72,12 @@ describe("Photo component", () => {
 
   it("should display error", async () => {
     server.use(
-      rest.get(`${process.env.REACT_APP_ENDPOINT}xxxxxxxxxxx/*`, (_req, res, ctx) => {
-        return res(ctx.status(500), ctx.json("an error has occurred"));
-      })
+      rest.get(
+        `${process.env.REACT_APP_ENDPOINT}xxxxxxxxxxx/*`,
+        (_req, res, ctx) => {
+          return res(ctx.status(500), ctx.json("an error has occurred"));
+        }
+      )
     );
 
     const { getByText } = renderWithProviders(

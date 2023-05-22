@@ -7,7 +7,7 @@ import AppHeader from "../../components/AppHeader";
 
 const Routes = () => {
   const [isFirstLoading, setIsFirstLoading] = useState(true);
-  const {albumsUrlPath , photosUrlPath} = routePaths
+  const { albumsUrlPath, photosUrlPath } = routePaths;
 
   useEffect(() => {
     if (isFirstLoading) {
@@ -15,19 +15,20 @@ const Routes = () => {
     }
   }, [isFirstLoading]);
 
-
   return (
     <>
-    <AppHeader />
-    <BrowserRouter>
-      <Switch>
-        <Route path={albumsUrlPath} exact component={Albums} />
-        {isFirstLoading && <Redirect to={albumsUrlPath} />}
-        <Route path={`${photosUrlPath}:albumid/:start/:limit`} component={Photos} />
-      </Switch>
-    </BrowserRouter>
+      <AppHeader />
+      <BrowserRouter>
+        <Switch>
+          <Route path={albumsUrlPath} exact component={Albums} />
+          {isFirstLoading && <Redirect to={albumsUrlPath} />}
+          <Route
+            path={`${photosUrlPath}:albumid/:start/:limit`}
+            component={Photos}
+          />
+        </Switch>
+      </BrowserRouter>
     </>
-    
   );
 };
 export default Routes;

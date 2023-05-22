@@ -1,6 +1,6 @@
 const routePaths = {
-  albumsUrlPath : `/albums`,
-  photosUrlPath : `/photo/album/`
-}
+  albumsUrlPath: `/albums`,
+  photosUrlPath: `/photo/album/`,
+};
 
-export default routePaths
+export default routePaths;

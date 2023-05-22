@@ -35,9 +35,9 @@ Object {
           </span>
           <span
             class="ant-select-selection-item"
-            title="undefined / page"
+            title="10 / page"
           >
-            undefined / page
+            10 / page
           </span>
         </div>
         <span
@@ -100,9 +100,9 @@ Object {
         </span>
         <span
           class="ant-select-selection-item"
-          title="undefined / page"
+          title="10 / page"
         >
-          undefined / page
+          10 / page
         </span>
       </div>
       <span
