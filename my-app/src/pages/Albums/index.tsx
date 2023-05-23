@@ -95,9 +95,9 @@ const Albums = () => {
         <div style={{
           display:'flex',
           alignItems:'center',
-          justifyContent:'space-between'
+          justifyContent:'space-between',
         }}>
-        Albums
+        <span style={{fontSize:'2vw'}}>Albums</span>
         <SelectPage
           pageLimit={pageLimit}
           onPageChange={(pageLimit: string) => onPageChange(pageLimit)}

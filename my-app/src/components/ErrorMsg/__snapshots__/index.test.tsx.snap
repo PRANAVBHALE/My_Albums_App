@@ -6,6 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
+        data-testid="error-msg"
         style="height: 100vh; display: flex; width: 100%; align-items: center; justify-content: center;"
       >
         <h5
@@ -18,6 +19,7 @@ Object {
   </body>,
   "container": <div>
     <div
+      data-testid="error-msg"
       style="height: 100vh; display: flex; width: 100%; align-items: center; justify-content: center;"
     >
       <h5

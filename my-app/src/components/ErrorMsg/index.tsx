@@ -7,6 +7,7 @@ const { Title } = Typography;
 const ErrorMsg = () => {
   return (
     <div
+      data-testid="error-msg"
       style={{
         height: "100vh",
         display: "flex",

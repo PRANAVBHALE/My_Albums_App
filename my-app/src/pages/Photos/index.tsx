@@ -103,8 +103,8 @@ const Photos = () => {
     <AppLayout>
       <div style={{ minWidth: "80%" }}>
       <div className={styles.albumDetailsBox}>
-        <div style={{ color: "white" }}>
-          {`Owner- `} <span style={{fontWeight:600}}>{name}</span>{`and his album - `}<span style={{fontWeight:600}}>{title}</span>
+        <div style={{ color: "white" }} >
+          {`Owner- `} <span data-testid="owner" style={{fontWeight:600}}>{name}</span>{`and his album - `}<span data-testid="album-title" style={{fontWeight:600}}>{title}</span>
         </div>
         <SelectPage
           pageLimit={pageLimit}
