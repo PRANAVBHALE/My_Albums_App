@@ -92,7 +92,18 @@ const Albums = () => {
   return (
     <AppLayout>
       <div data-testid="album-table" style={{ minWidth: "80%" }}>
+        <div style={{
+          display:'flex',
+          alignItems:'center',
+          justifyContent:'space-between'
+        }}>
         Albums
+        <SelectPage
+          pageLimit={pageLimit}
+          onPageChange={(pageLimit: string) => onPageChange(pageLimit)}
+        />
+        </div>
+        
         <Table
           dataSource={dataSource}
           columns={columns}
@@ -103,10 +114,7 @@ const Albums = () => {
             },
           })}
         />
-        <SelectPage
-          pageLimit={pageLimit}
-          onPageChange={(pageLimit: string) => onPageChange(pageLimit)}
-        />
+        
       </div>
     </AppLayout>
   );

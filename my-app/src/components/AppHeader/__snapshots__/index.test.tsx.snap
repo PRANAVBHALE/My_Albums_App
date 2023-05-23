@@ -7,7 +7,7 @@ Object {
     <div>
       <header
         class="ant-layout-header css-dev-only-do-not-override-15rg2km"
-        style="color: rgb(54, 69, 79); height: 64px; padding-inline: 50px; line-height: 64px; background-color: rgb(2, 236, 136); font-size: 24px; font-weight: 600;"
+        style="color: rgb(54, 69, 79); height: 64px; padding-inline: 50px; line-height: 64px; background-color: rgb(2, 236, 136); font-size: 2vw; font-weight: 600;"
       >
         Albums Application
       </header>
@@ -16,7 +16,7 @@ Object {
   "container": <div>
     <header
       class="ant-layout-header css-dev-only-do-not-override-15rg2km"
-      style="color: rgb(54, 69, 79); height: 64px; padding-inline: 50px; line-height: 64px; background-color: rgb(2, 236, 136); font-size: 24px; font-weight: 600;"
+      style="color: rgb(54, 69, 79); height: 64px; padding-inline: 50px; line-height: 64px; background-color: rgb(2, 236, 136); font-size: 2vw; font-weight: 600;"
     >
       Albums Application
     </header>
