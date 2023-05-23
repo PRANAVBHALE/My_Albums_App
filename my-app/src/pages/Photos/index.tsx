@@ -33,7 +33,7 @@ const Photos = () => {
     isError: photosError,
   } = useGetPhotosListQuery(params);
 
-  const { record } = location.state as IrecordType; // Type Casting, then you can get the params passed via router
+  const { record } = location.state as IrecordType;
 
   const { name, title } = record;
 
@@ -50,7 +50,7 @@ const Photos = () => {
   const columns = [
     {
       title: "Thumbnail",
-      dataIndex: "thumbnailUrl", // this is the value that is parsed from the DB / server side
+      dataIndex: "thumbnailUrl",
       render: (thumbnailUrl: string) => (
         <img
           style={{ width: 50, height: 50 }}
@@ -58,7 +58,7 @@ const Photos = () => {
           src={thumbnailUrl}
           loading="lazy"
         />
-      ), // 'theImageURL' is the variable you must declare in order the render the URL
+      ),
       onCell: (record: recordType) => {
         return {
           onClick: () => {
