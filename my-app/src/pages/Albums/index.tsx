@@ -38,7 +38,6 @@ const Albums = () => {
 
   const handleRowClick = (record: recordType) => {
     const { albumId } = record;
-    //  history.push(`/photo/album/${albumId}/0/5`)
     history.push({
       pathname: `/photo/album/${albumId}/0/20`,
       state: {
@@ -95,9 +94,9 @@ const Albums = () => {
         <div style={{
           display:'flex',
           alignItems:'center',
-          justifyContent:'space-between'
+          justifyContent:'space-between',
         }}>
-        Albums
+        <span style={{fontSize:'2vw'}}>Albums</span>
         <SelectPage
           pageLimit={pageLimit}
           onPageChange={(pageLimit: string) => onPageChange(pageLimit)}

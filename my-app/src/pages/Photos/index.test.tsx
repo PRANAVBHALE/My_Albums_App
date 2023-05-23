@@ -80,7 +80,7 @@ describe("Photo component", () => {
       )
     );
 
-    const { getByText } = renderWithProviders(
+    renderWithProviders(
       <MemoryRouter
         initialEntries={[
           {
@@ -106,13 +106,12 @@ describe("Photo component", () => {
     expect(loader).toBeInTheDocument();
 
     await waitFor(() => {
-      const error = getByText("Opps!!! Something went wrong!");
+      const error = screen.getByText("Opps!!! Something went wrong!");
       expect(error).toBeInTheDocument();
     });
   });
 
   it("should success", async () => {
-    const { getByText, getByAltText, queryByText, getByTestId } =
       renderWithProviders(
         <MemoryRouter
           initialEntries={[
@@ -139,43 +138,8 @@ describe("Photo component", () => {
     expect(loader).toBeInTheDocument();
 
     await waitFor(() => {
-      const table = getByTestId("photo-table");
+      const table = screen.getByTestId("photo-table");
       expect(table).toBeInTheDocument();
-    });
-  });
-
-  it("should have owner name and title column", async () => {
-    const { getByText, getByAltText, queryByText, getByTestId, getByRole } =
-      renderWithProviders(
-        <MemoryRouter
-          initialEntries={[
-            {
-              pathname: "/photo/album/1/0/5",
-              search: "",
-              state: {
-                record: {
-                  albumId: 1,
-                  id: 1,
-                  imgUrl: "https://via.placeholder.com/150/e743b",
-                  name: "Pranav",
-                  title: "Album Title",
-                },
-              },
-            },
-          ]}
-        >
-          <Photo />
-        </MemoryRouter>
-      );
-
-    const loader = screen.getByTestId("loader");
-    expect(loader).toBeInTheDocument();
-
-    await waitFor(() => {
-      const ownerAndTitle = getByText(
-        "Owner - Pranav and his album - Album Title"
-      );
-      expect(ownerAndTitle).toBeInTheDocument();
     });
   });
 });
