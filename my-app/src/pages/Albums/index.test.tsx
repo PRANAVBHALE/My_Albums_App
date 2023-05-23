@@ -43,8 +43,8 @@ describe("Albums component", () => {
     const loader = screen.getByTestId("loader");
     expect(loader).toBeInTheDocument();
 
-    await waitFor(() => {
-      const error = getByText("Opps!!! Something went wrong!");
+    await waitFor(async () => {
+      const error = screen.getByText("Opps!!! Something went wrong!");
       expect(error).toBeInTheDocument();
     });
   });
@@ -70,15 +70,15 @@ describe("Albums component", () => {
     expect(loader).toBeInTheDocument();
 
     await waitFor(async () => {
-      const titleColumn = await screen.getByRole("columnheader", {
+      const titleColumn = screen.getByRole("columnheader", {
         name: /Title/i,
       });
 
-      const nameColumn = await screen.getByRole("columnheader", {
+      const nameColumn = screen.getByRole("columnheader", {
         name: /Name/i,
       });
 
-      const imgColumn = await screen.getByRole("columnheader", {
+      const imgColumn = screen.getByRole("columnheader", {
         name: /Img Url/i,
       });
       expect(imgColumn).toBeInTheDocument();

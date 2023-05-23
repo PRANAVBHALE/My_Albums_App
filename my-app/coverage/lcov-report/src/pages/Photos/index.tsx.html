@@ -214,7 +214,9 @@
 <a name='L149'></a><a href='#L149'>149</a>
 <a name='L150'></a><a href='#L150'>150</a>
 <a name='L151'></a><a href='#L151'>151</a>
-<a name='L152'></a><a href='#L152'>152</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -235,7 +237,6 @@
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-yes">13x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -357,6 +358,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -365,34 +369,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import styles from './photoPage.module.css'
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import styles from "./photoPage.module.css";
 &nbsp;
 import { useLocation, useParams } from "react-router-dom";
 import ErrorMsg from "../../components/ErrorMsg";
 import Loader from "../../components/Loader";
 import { useGetPhotosListQuery } from "../../services/photosApi";
-import { Select, Table } from "antd";
 import { useState } from "react";
 import PhotoModal from "../../components/Modal";
-import {IrecordType,recordType,routeParamsType} from './types'
+import { IrecordType, recordType, routeParamsType } from "./types";
 import AppLayout from "../../components/Layout";
-import SelectPage from '../../components/SelectPage';
+import SelectPage from "../../components/SelectPage";
+import { Table } from "antd";
 &nbsp;
 const Photos = () =&gt; {
-  const routeParams:routeParamsType = useParams();
-  const {limit ,start , albumid} = routeParams
+  const routeParams: routeParamsType = useParams();
+  const { limit, start, albumid } = routeParams;
   const location = useLocation();
   const [modalOpen, setModalOpen] = useState(false);
   const [imgUrl, setImgUrl] = useState("");
   const [photoTitle, setPhotoTitle] = useState("");
   const [pageLimit, setPageLimit] = useState(limit);
 &nbsp;
-&nbsp;
   const params = {
     start,
     pageLimit,
-    albumid
-  }
+    albumid,
+  };
 &nbsp;
   const {
     data: photos,
@@ -413,7 +416,7 @@ const Photos = () =&gt; {
 <span class="cstat-no" title="statement not covered" >    setModalOpen(false);</span>
 <span class="cstat-no" title="statement not covered" >    setImgUrl("");</span>
 <span class="cstat-no" title="statement not covered" >    setPhotoTitle("");</span>
-  }
+  };
 &nbsp;
   const columns = [
     {
@@ -453,7 +456,7 @@ const Photos = () =&gt; {
       title: "Title",
       dataIndex: "title",
       key: "title",
-      width: '70%',
+      width: "70%",
       //  onCell: () =&gt; alert("clicked")
     },
   ];
@@ -469,17 +472,19 @@ const Photos = () =&gt; {
 &nbsp;
   return (
     &lt;AppLayout&gt;
-    &lt;div  style={{minWidth: "80%"}}&gt;
-&nbsp;
-        &lt;div style={{color:"white"}}&gt;
-        {`Owner - ${name} and his album - ${title}`}
+      &lt;div style={{ minWidth: "80%" }}&gt;
+        &lt;div style={{ color: "white" }}&gt;
+          {`Owner - ${name} and his album - ${title}`}
         &lt;/div&gt;
 &nbsp;
-        &lt;div data-testid="photo-table" &gt;
-          &lt;Table dataSource={dataSource} columns={columns} pagination={false}  /&gt;
+        &lt;div data-testid="photo-table"&gt;
+          &lt;Table dataSource={dataSource} columns={columns} pagination={false} /&gt;
         &lt;/div&gt;
         {imgUrl &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;PhotoModal handleCloseModal = {<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleCloseModal()}</span>  modalOpen={modalOpen}&gt;</span>
+<span class="branch-1 cbranch-no" title="branch not covered" >          &lt;PhotoModal</span>
+            handleCloseModal={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >handleCloseModal()}</span>
+            modalOpen={modalOpen}
+          &gt;
             &lt;div className={styles.modal}&gt;
               &lt;img
                 style={{ width: 300, height: 300 }}
@@ -492,26 +497,27 @@ const Photos = () =&gt; {
                   display: "flex",
                   alignItems: "center",
                   textAlign: "left",
-                  fontSize:'medium'
+                  fontSize: "medium",
                 }}
               &gt;
                 &lt;div&gt;
-                Owner - &lt;span className={styles.details}&gt;{name}&lt;/span&gt; 
-                &lt;br /&gt;
-                Album - &lt;span className={styles.details}&gt;{title}&lt;/span&gt; 
-                &lt;br /&gt;
-                Photo - &lt;span className={styles.details}&gt;{photoTitle}&lt;/span&gt; 
+                  Owner - &lt;span className={styles.details}&gt;{name}&lt;/span&gt;
+                  &lt;br /&gt;
+                  Album - &lt;span className={styles.details}&gt;{title}&lt;/span&gt;
+                  &lt;br /&gt;
+                  Photo - &lt;span className={styles.details}&gt;{photoTitle}&lt;/span&gt;
                 &lt;/div&gt;
-               
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/PhotoModal&gt;
         )}
 &nbsp;
-      &lt;SelectPage pageLimit={pageLimit} onPageChange={<span class="fstat-no" title="function not covered" >(p</span>ageLimit:string) =&gt; <span class="cstat-no" title="statement not covered" >onPageChange(pageLimit)}</span>/&gt;
+        &lt;SelectPage
+          pageLimit={pageLimit}
+          onPageChange={<span class="fstat-no" title="function not covered" >(p</span>ageLimit: string) =&gt; <span class="cstat-no" title="statement not covered" >onPageChange(pageLimit)}</span>
+        /&gt;
       &lt;/div&gt;
     &lt;/AppLayout&gt;
-     
   );
 };
 &nbsp;
@@ -523,7 +529,7 @@ export default Photos;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-05-22T21:53:09.030Z
+                at 2023-05-23T04:04:01.732Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
