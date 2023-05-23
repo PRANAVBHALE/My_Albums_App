@@ -102,10 +102,15 @@ const Photos = () => {
   return (
     <AppLayout>
       <div style={{ minWidth: "80%" }}>
+      <div className={styles.albumDetailsBox}>
         <div style={{ color: "white" }}>
-          {`Owner - ${name} and his album - ${title}`}
+          {`Owner- `} <span style={{fontWeight:600}}>{name}</span>{`and his album - `}<span style={{fontWeight:600}}>{title}</span>
         </div>
-
+        <SelectPage
+          pageLimit={pageLimit}
+          onPageChange={(pageLimit: string) => onPageChange(pageLimit)}
+        />
+        </div>
         <div data-testid="photo-table">
           <Table dataSource={dataSource} columns={columns} pagination={false} />
         </div>
@@ -140,11 +145,6 @@ const Photos = () => {
             </div>
           </PhotoModal>
         )}
-
-        <SelectPage
-          pageLimit={pageLimit}
-          onPageChange={(pageLimit: string) => onPageChange(pageLimit)}
-        />
       </div>
     </AppLayout>
   );

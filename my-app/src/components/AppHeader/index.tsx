@@ -10,7 +10,7 @@ const headerStyle: React.CSSProperties = {
   paddingInline: 50,
   lineHeight: "64px",
   backgroundColor: "#02ec88",
-  fontSize: "24px",
+  fontSize: "2vw",
   fontWeight: "600",
 };
 
