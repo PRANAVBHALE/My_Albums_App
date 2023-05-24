@@ -41,9 +41,24 @@
   Launches the test runner in the interactive watch mode.\
   See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
   
-### `npm run format`
+## Docker instructions.
 
-  Formats all the .ts and .tsx files with help of prettier.
+
+### `docker login -u username`
+
+  Login with your account in docker through cli.
+
+### `docker pull pranavbhale/react`
+
+  Pull docker image of the application from docker hub.
+  
+### `docker images`
+
+  Lists local docker images.
+  
+### `docker run --publish 3000:3000 pranavbhale/react`
+
+  App will run on http://localhost:3000.
   
 # Libraries used:
   - Typescript - To support type check.
