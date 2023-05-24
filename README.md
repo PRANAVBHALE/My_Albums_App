@@ -69,3 +69,27 @@
   - Jest - Testing Env.
   - React testing library - Testing UI
   - Cross Fetch - Proxy
+
+
+## SnapShots:
+
+<img width="1323" alt="Albums" src="https://github.com/PRANAVBHALE/My_Albums_App/assets/16414346/5cbefc03-cf7c-44d5-97fe-fb3166767f8c">
+
+Albums Page
+
+ <img width="1348" alt="Photos" src="https://github.com/PRANAVBHALE/My_Albums_App/assets/16414346/29a3c9b6-7805-4fba-ad22-f796a6cbc8e0">
+ 
+Photos Page
+
+<img width="909" alt="Modal" src="https://github.com/PRANAVBHALE/My_Albums_App/assets/16414346/81b04ec7-055b-484f-86c7-67717c6212ff">
+
+Modal
+
+<img width="1671" alt="Lighthouse" src="https://github.com/PRANAVBHALE/My_Albums_App/assets/16414346/b4f88890-15b5-4164-9b6a-ad162e3f2270">
+
+Lighthouse
+
+
+<img width="648" alt="Testcases" src="https://github.com/PRANAVBHALE/My_Albums_App/assets/16414346/3c200b04-ea0c-4bd0-a312-bc07538c6d45">
+
+Testcases
